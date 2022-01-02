@@ -34,6 +34,9 @@ body {
   font-family: var(--fn-fm);
   height: 100vh;
 }
+h1 {
+  display: none;
+}
 .page__wrapper {
   padding: 4.4rem 1.5rem;
   display: grid;
@@ -166,8 +169,5 @@ body {
   }
   .harmon {
     grid-area: harmon;
-  }
-  .harmon .user--opinion {
-    font-size: 1.5rem;
   }
 }
