@@ -1,0 +1,173 @@
+:root {
+  /* COLOR PALLET */
+
+  --clr-violet: hsl(263, 55%, 52%);
+  --clr-border: hsl(263, 54%, 62%);
+  --clr-dark-blue: hsl(219, 29%, 14%);
+  --clr-g300: hsl(217, 19%, 35%);
+  --clr-g200: hsl(0, 0%, 81%);
+  --clr-g100: hsl(210, 46%, 95%);
+  --clr-white: hsl(0, 0%, 100%);
+
+  /*FONTS FOR HEADINGS AND WEIGHTS */
+  --fn-fm: "Barlow Semi Condensed", sans-serif;
+  --fnt-wght-500: 500;
+  --fnt-wght-600: 600;
+}
+*,
+*::backdrop,
+*::after {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  font-family: var(--fnt-fm);
+}
+body {
+  background-color: var(--clr-g100);
+  font-size: 62.5%;
+  font-family: var(--fn-fm);
+  height: 100vh;
+}
+.page__wrapper {
+  padding: 4.4rem 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+.card {
+  border-radius: 0.5rem;
+  padding: 1.5rem 2rem;
+  margin-bottom: 1.5rem;
+}
+.card__header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+.user--image {
+  border-radius: 100%;
+  width: 1.8rem;
+}
+/* EXCEPTION */
+.clifford .user--image {
+  outline: 2px solid var(--clr-border);
+}
+.user--name {
+  font-weight: var(--fnt-wght-500);
+  font-size: 0.81rem;
+  color: var(--clr-g200);
+}
+.user--verf {
+  font-size: 0.71rem;
+  color: var(--clr-g200);
+  opacity: 50%;
+}
+.user--opinion {
+  color: var(--clr-g100);
+  font-size: 1.25rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.user--long-description {
+  color: var(--clr-g100);
+  font-size: 0.84rem;
+  font-weight: 100;
+  line-height: 1.3;
+  opacity: 90%;
+  padding-right: 0.54rem;
+  margin-bottom: 0.8rem;
+}
+/* USER GENERAL SETTINGS */
+
+/* EXCEPTION */
+.clifford {
+  background-color: var(--clr-violet);
+  background-image: url(./images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-position: top 0 left 90%;
+}
+.walters {
+  background-color: var(--clr-g300);
+}
+.harmon,
+.kira {
+  background-color: var(--clr-white);
+}
+
+.harmon .user--opinion,
+.kira .user--opinion {
+  color: var(--clr-g300);
+  font-weight: 600;
+}
+.harmon .user--long-description,
+.kira .user--long-description {
+  color: var(--clr-g300);
+  font-weight: 400;
+  opacity: 70%;
+}
+.harmon .user--name,
+.kira .user--name {
+  color: var(--clr-g300);
+  font-weight: 600;
+}
+.harmon .user--verf,
+.kira .user--verf {
+  color: var(--clr-g300);
+  font-weight: 600;
+}
+/*KIRA */
+.kira .user--opinion {
+  font-weight: 600;
+}
+/*ABRAMS */
+.abrams {
+  background-color: var(--clr-dark-blue);
+}
+
+@media screen and (min-width: 1300px) {
+  body {
+    display: grid;
+    place-items: center;
+  }
+  .page__wrapper {
+    padding: 4rem 7rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    grid-template-areas:
+      "clifford clifford walters kira"
+      "harmon abrams abrams kira";
+
+    max-width: 1350px;
+    margin: 0 auto;
+  }
+  .card {
+    max-width: 800px;
+    margin: 0;
+  }
+  .clifford {
+    grid-area: clifford;
+  }
+  .walters {
+    grid-area: walters;
+  }
+  .kira {
+    grid-area: kira;
+  }
+  .abrams {
+    grid-area: abrams;
+  }
+  .harmon {
+    grid-area: harmon;
+  }
+  .harmon .user--opinion {
+    font-size: 1.5rem;
+  }
+}
